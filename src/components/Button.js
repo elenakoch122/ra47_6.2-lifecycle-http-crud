@@ -1,4 +1,4 @@
-export default function Button({ icon, color, fontSize, element = null }) {
+export default function Button({ icon, color, fontSize, element = null, callback = null }) {
   const styles = { color, fontSize };
   let classes;
 
@@ -13,5 +13,5 @@ export default function Button({ icon, color, fontSize, element = null }) {
       classes = "button";
   }
 
-  return <button className={classes} style={styles}>{icon}</button>;
+  return <button className={classes} style={styles} onClick={callback}>{icon}</button>;
 }
